@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="bookmaster.master.cs" Inherits="BookManagement.bookmaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+	<style type="text/css">
+		.auto-style1 {
+			width: 100%;
+		}
+		.auto-style2 {
+			width: 404px;
+		}
+		</style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table class="auto-style1">
+			<tr>
+				<td class="auto-style2">
+					<asp:Image ID="Image1" runat="server" Height="181px" ImageUrl="~/book.jpeg" Width="404px" />
+				</td>
+				<td>
+					<br />
+					<asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="XX-Large" ForeColor="#3333CC" Text="Book Management System"></asp:Label>
+				</td>
+			</tr>
+			<tr>
+				<td class="auto-style2">
+					<br />
+					<asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
+					</asp:Menu>
+					<asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" ImageSet="Inbox" ShowLines="True">
+						<HoverNodeStyle Font-Underline="True" />
+						<NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+						<ParentNodeStyle Font-Bold="False" />
+						<SelectedNodeStyle Font-Underline="True" HorizontalPadding="0px" VerticalPadding="0px" />
+					</asp:TreeView>
+					<asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+					<br />
+				</td>
+				<td>
+					<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+					</asp:ContentPlaceHolder>
+				</td>
+			</tr>
+			<tr>
+				<td class="auto-style2">&nbsp;</td>
+				<td>
+					<asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Italic="True" ForeColor="#003300" Text="contact@capgemini.com"></asp:Label>
+				</td>
+			</tr>
+		</table>
+    </form>
+</body>
+</html>
